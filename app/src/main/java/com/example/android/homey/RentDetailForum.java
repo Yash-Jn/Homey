@@ -285,6 +285,10 @@ public class RentDetailForum extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     saveUserDetails();
+                                    finish();
+                                    /*Intent intent = new Intent(RentDetailForum.this, DisplayLandlordDetailsActivity.class);
+                                    intent.putExtra("current_uid", FirebaseSDKs.user.getUid());
+                                    startActivity(intent);*/
                                 }
                             };
 
@@ -295,7 +299,7 @@ public class RentDetailForum extends AppCompatActivity {
 
             case R.id.action_sign_out:
                 AuthUI.getInstance().signOut(this);
-                finish();
+                moveTaskToBack(true);
                 return true;
         }
         return super.onOptionsItemSelected(item);

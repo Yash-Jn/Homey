@@ -278,4 +278,34 @@
                 style="@style/EditorUnitsStyle" />
         </RelativeLayout>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Other Peoples can see your travel" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp"
+            android:layout_gravity="center_vertical">
+
+            <Switch
+                android:id="@+id/visibility_permission_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textOff="No"
+                android:textOn="Yes"/>
+
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
