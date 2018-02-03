@@ -1,13 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/photoImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true" />
+
+        <!-- Overview category -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="Full Name" />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingLeft="4dp">
+
+                <!-- Name field -->
+                <TextView
+                    android:id="@+id/name_text_view"
+                    style="@style/EditorFieldStyle"
+                    android:paddingTop="16dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Gender category -->
+        <LinearLayout
+            android:id="@+id/container_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="Gender" />
+
+            <!-- Input field -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <!-- drop-down spinner -->
+                <TextView
+                    android:id="@+id/gender_text_view"
+                    style="@style/EditorFieldStyle"
+                    android:paddingTop="16dp" />
+            </LinearLayout>
+        </LinearLayout>
 
         <!-- Overview category -->
         <LinearLayout
@@ -28,36 +89,35 @@
                 android:orientation="vertical"
                 android:paddingLeft="4dp">
 
-                <!-- field -->
-                <EditText
-                    android:id="@+id/edit_rent_address"
+                <!-- Name field -->
+                <TextView
+                    android:id="@+id/address_text_view"
                     style="@style/EditorFieldStyle"
-                    android:hint="Address"
-                    android:inputType="textMultiLine|textCapWords" />
+                    android:paddingTop="16dp" />
 
-                <EditText
-                    android:id="@+id/edit_rent_city"
+                <!-- field -->
+                <TextView
+                    android:id="@+id/city_text_view"
+
                     style="@style/EditorFieldStyle"
-                    android:hint="City"
-                    android:inputType="textCapWords" />
+                    android:paddingTop="16dp" />
 
                 <!-- drop-down spinner -->
-                <Spinner
-                    android:id="@+id/spinner_state1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="48dp"
-                    android:paddingRight="16dp"
-                    android:spinnerMode="dropdown" />
+                <TextView
+                    android:id="@+id/state_text_view"
 
-                <EditText
-                    android:id="@+id/edit_rent_zip_code"
                     style="@style/EditorFieldStyle"
-                    android:hint="Zip Code"
-                    android:inputType="number" />
+                    android:paddingTop="16dp" />
+
+                <TextView
+                    android:id="@+id/zip_code_text_view"
+
+                    style="@style/EditorFieldStyle"
+                    android:paddingTop="16dp" />
 
             </LinearLayout>
         </LinearLayout>
-
+        <!-- Overview category -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,27 +126,54 @@
             <!-- Label -->
             <TextView
                 style="@style/CategoryStyle"
-                android:text="Please tap on this button and then either select your locality on search box or if you are at place which you want to give on rent use the self locating button provided on that page." />
+                android:text="Phone Number" />
 
             <!-- Input fields -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
                 android:layout_weight="2"
                 android:orientation="vertical"
                 android:paddingLeft="4dp">
 
-                <Button
-                    android:id="@+id/property_location"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Tap on me" />
+                <!-- field -->
+                <TextView
+                    android:id="@+id/phone_number_text_view"
+
+                    style="@style/EditorFieldStyle"
+                    android:paddingTop="16dp" />
 
             </LinearLayout>
         </LinearLayout>
 
         <!-- Overview category -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="Email" />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingLeft="4dp">
+
+                <!-- field -->
+                <TextView
+                    android:id="@+id/email_text_view"
+
+                    style="@style/EditorFieldStyle"
+                    android:paddingTop="16dp" />
+
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -106,41 +193,16 @@
                 android:orientation="vertical"
                 android:paddingLeft="4dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                <!-- field -->
+                <TextView
+                    android:id="@+id/available_rooms_text_view"
 
-                    <Button
-                        android:id="@+id/dec_room"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:onClick="decrement"
-                        android:text="-" />
-
-
-                    <TextView
-                        android:id="@+id/avl_room_text_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:text="1"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp" />
-
-                    <Button
-                        android:id="@+id/inc_room"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:onClick="increment"
-                        android:text="+" />
-                </LinearLayout>
+                    style="@style/EditorFieldStyle"
+                    android:paddingTop="16dp" />
 
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Overview category -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -159,15 +221,16 @@
                 android:orientation="vertical"
                 android:paddingLeft="4dp">
 
-                <CheckBox
-                    android:id="@+id/ac_rooms_checkbox"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp" />
+                <!-- field -->
+                <TextView
+                    android:id="@+id/ac_rooms_text_view"
+
+                    style="@style/EditorFieldStyle"
+                    android:paddingTop="16dp" />
 
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Overview category -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -186,15 +249,16 @@
                 android:orientation="vertical"
                 android:paddingLeft="4dp">
 
-                <CheckBox
-                    android:id="@+id/attached_washrooms_checkbox"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp" />
+                <!-- field -->
+                <TextView
+                    android:id="@+id/attached_washrooms_text_view"
+
+                    style="@style/EditorFieldStyle"
+                    android:paddingTop="16dp" />
 
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Overview category -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -213,15 +277,16 @@
                 android:orientation="vertical"
                 android:paddingLeft="4dp">
 
-                <CheckBox
-                    android:id="@+id/parking_checkbox"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp" />
+                <!-- field -->
+                <TextView
+                    android:id="@+id/parking_text_view"
+
+                    style="@style/EditorFieldStyle"
+                    android:paddingTop="16dp" />
 
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Overview category -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -240,72 +305,14 @@
                 android:orientation="vertical"
                 android:paddingLeft="4dp">
 
-                <CheckBox
-                    android:id="@+id/wifi_checkbox"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp" />
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Overview category -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <!-- Label -->
-            <TextView
-                android:text="Any Description"
-                style="@style/CategoryStyle" />
-
-            <!-- Input fields -->
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:paddingLeft="4dp"
-                android:orientation="vertical">
-
                 <!-- field -->
-                <EditText
-                    android:id="@+id/edit_description"
-                    android:hint="Description (if any)...."
-                    android:inputType="textMultiLine"
-                    style="@style/EditorFieldStyle" />
+                <TextView
+                    android:id="@+id/wifi_text_view"
+
+                    style="@style/EditorFieldStyle"
+                    android:paddingTop="16dp" />
 
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/container_measurement"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <!-- Label -->
-            <TextView
-                android:text="Price Per Day"
-                style="@style/CategoryStyle" />
-
-            <!-- Input fields -->
-            <RelativeLayout
-                android:layout_height="wrap_content"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:paddingLeft="4dp">
-
-                <EditText
-                    android:id="@+id/edit_price"
-                    android:hint="Price Per Day"
-                    android:inputType="number"
-                    style="@style/EditorFieldStyle" />
-
-                <TextView
-                    android:id="@+id/label_weight_units"
-                    android:text="Rs"
-                    style="@style/EditorUnitsStyle" />
-            </RelativeLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -316,22 +323,50 @@
             <!-- Label -->
             <TextView
                 style="@style/CategoryStyle"
-                android:text="Choose Photo" />
+                android:text="Description" />
 
             <!-- Input fields -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
                 android:layout_weight="2"
                 android:orientation="vertical"
                 android:paddingLeft="4dp">
 
-                <ImageButton
-                    android:id="@+id/photoPickerButton"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:background="@android:drawable/ic_menu_gallery" />
+                <!-- field -->
+                <TextView
+                    android:id="@+id/description_text_view"
+
+                    style="@style/EditorFieldStyle"
+                    android:paddingTop="16dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="Price Per Day" />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingLeft="4dp">
+
+                <!-- field -->
+                <TextView
+                    android:id="@+id/price_text_view"
+
+                    style="@style/EditorFieldStyle"
+                    android:paddingTop="16dp" />
 
             </LinearLayout>
         </LinearLayout>

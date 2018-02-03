@@ -19,19 +19,36 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Signup">
+        <activity
+            android:name=".Signup"
+            android:label="Add General Information"></activity>
+
+        <activity android:name=".Decision"
+            android:label="Choose">
 
         </activity>
 
-        <activity android:name=".Decision">
+        <activity android:name=".RentDetailForum"
+            android:label="Add Host Details"
+            android:parentActivityName=".Decision">
 
         </activity>
 
-        <activity android:name=".RentDetailForum">
+        <activity android:name=".TenantRequirementForum"
+            android:label="Add Tenant Details"
+            android:parentActivityName=".Decision">
 
         </activity>
 
-        <activity android:name=".TenantRequirementForum">
+        <activity android:name=".TenantSearchResultActivity"
+            android:label="Search Results"
+            android:parentActivityName=".TenantRequirementForum">
+
+        </activity>
+
+        <activity android:name=".DisplayLandlordDetailsActivity"
+            android:label="Host Detail"
+            android:parentActivityName=".TenantSearchResultActivity">
 
         </activity>
 
@@ -39,6 +56,9 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_application_id" />
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCKlmSCmoHJZM7qy7r-0H-CroggYg8MZeU" />
     </application>
 
 </manifest>
